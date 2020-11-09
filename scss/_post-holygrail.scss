@@ -991,15 +991,16 @@ ul.list-inline {
 }
 
 .point {
+  width: 50%;
   position: relative;
   div {
-    right: -10%;
+    right: -8%;
     bottom: 0;
     position: absolute;
   }
   .mini-point {
-    width: 8%;
-    bottom: 0;
+    width: 6%;
+    bottom: 16%;
     border-radius: 50%;
     background-color: $primary;
   }
