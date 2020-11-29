@@ -287,3 +287,5 @@ $(window).scroll(function() {
       new SmoothScroll();
   });
 }
+
+

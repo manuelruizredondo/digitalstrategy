@@ -196,6 +196,10 @@ function devServer() {
     watch('./scss/**/*.scss'), styleWatch;
 
     watch('./src/**/*.html', series('copyTemplatesWatch', 'injectAssetsWatch')).on('change', browserSync.reload)
+
+
+    watch("./scss/**/*.scss", series('style', 'copyStyles')).on('change', browserSync.reload);
+    watch('./src/**/*.html', series('copyTemplates', 'injectAssets')).on('change', browserSync.reload)
 }
 
 /********* WATCH PROPIO *********** */
@@ -244,4 +248,6 @@ exports.generate = series(style, copyTemplates, copyAssets, copyStyles, injectAs
 
 // Full development workflow
 exports.build = series(this.generate);
-exports.dev = series(this.generate, devServer);
+
+exports.dev = series(this.generate, buildServer);
+
