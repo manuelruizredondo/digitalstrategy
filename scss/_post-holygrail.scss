@@ -1181,9 +1181,8 @@ ul.list-inline {
 
 
 
-
 .cursor {
-  position: absolute;
+  position: fixed;
   background-color: white;
   width: 4px;
   height: 4px;
@@ -1192,24 +1191,17 @@ ul.list-inline {
   user-select: none;
   pointer-events: none;
   transform: scale(1);
-
 }
-
 .cursor-follow {
-  position: absolute;
-  background-color: #fff;
+  position: fixed;
+  background-color: #f70154;
   width: 24px;
   height: 24px;
   border-radius: 100%;
   z-index: 1000;
   mix-blend-mode: difference;
-
-
-
   user-select: none;
   pointer-events: none;
-
-
 }
 
 .mix-blend{
@@ -1227,3 +1219,4 @@ ul.list-inline {
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
+

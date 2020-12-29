@@ -48,12 +48,12 @@ $(document).ready(function () {
 
 $(window).scroll(function() {
     var scroll = $(window).scrollTop();
-
+     //console.log(scroll);
     if (scroll >= 50) {
-
+        //console.log('a');
         $("body").addClass("has-stick");
-    } else {  
-
+    } else {
+        //console.log('a');
         $("body").removeClass("has-stick");
     }
 });
