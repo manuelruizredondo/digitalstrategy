@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- general meta data variables
+    DIGITALSTRATEGY - SEO 
+    SEO_SHORT_DESCRIPTION
+    SEO_KEYWORDS
+    SEO_AUTHOR
+    SEO_URL
+    SEO_WEBSITE_PAGE_SUBJECT
+    COPYRIGHT_HOLDERS
+    REVISION_DATE
+    SEO_URL
+    SEO_IMAGE_TO_USE
+    SEOsummary
+    TWITTER_ID
+    SEO_article
+    SITE_NAME
+    -->
+    <title> DIGITALSTRATEGY - SEO </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name=robots content="index,follow">
+    <meta name="robots" content="noindex">
+    <!-- inject:css -->
+    <!-- endinject -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/css/swiper.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.jquery.js"></script>
+    <script src="./assets/js/scripts.js"></script>
+</head>
+<div class="kv-menu-mobile-btn">
+    <div class="ma-hamb">
+        <div class="ma-hamb-bar ma-hamb-bar__top"></div>
+        <div class="ma-hamb-bar ma-hamb-bar__middle"></div>
+        <div class="ma-hamb-bar ma-hamb-bar__bottom"></div>
+    </div>
+</div>
+<div class="kv-menu-mobile">
+    <div class="kv-menu-mobile-wrap ">
+        <div class="kv-menu-mobile-inner">
+            <ul class="list-inline ">
+                <li> <a class="kv-menu-item " href="nosotros.html"> NOSOTROS</a> </li>
+                <li> <a class="kv-menu-item " href="productos.html"> PRODUCTOS</a> </li>
+                <li> <a class="kv-menu-item " href="navegacion.html"> NAVEGACIÓN</a> </li>
+                <li> <a class="kv-menu-item " href="sectores.html"> SECTORES</a> </li>
+                <li> <a class="kv-menu-item " href="career.html"> CAREER</a> </li>
+                <li> <a class="kv-menu-item " href="contacta.html"> CONTACTA</a> </li>
+                <li> <a class="kv-menu-item " href="blog.html"> ES</a> </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="cursor"></div>
+<div class="cursor-follow"></div>
+<!-- menu mobile -->
+<div data-barba="wrapper">
+    <main data-barba="container" data-barba-namespace="timber">
+        <div data-scroll-container>
+            <section class="section"data-scroll-section>
+                <h1 data-scroll>Hey</h1>
+                <p data-scroll>👋</p>
+            </section>
+            <section class=" section funciona" id="funciona" data-scroll-section>
+                <h2 data-scroll data-scroll-speed="1" data-scroll-call="funciona" data-scroll-position="top">funciona </h2>
+                <div class="imagenpin">
+                </div>
+                <p data-scroll data-scroll-speed="2">😬</p>
+            </section>
+
+            <section class="section funciona2" id="funciona2" data-scroll-section>
+                <h2 data-scroll data-scroll-speed="1" data-scroll-call="funciona2" data-scroll-position="top">funciona2
+                </h2>
+                <p data-scroll data-scroll-speed="2">😬</p>
+            </section>
+
+
+            <section class="section" data-scroll-section>
+                <h2 data-scroll data-scroll-speed="1">funciona 3 </h2>
+                <p data-scroll data-scroll-speed="2">😬</p>
+            </section>
+        </div>
+    </main>
+</div>
+<!-- zona scripts -->
+<script src="https://unpkg.com/@barba/core"></script>
+<script src="  https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.1/dist/locomotive-scroll.min.js">   </script>
+<script src="  https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/ScrollTrigger.min.js"></script>
+<script src="  https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/SplitText3.min.js"></script>
+<script src="./assets/js/cursor.js"></script>
+<script src="./assets/js/index.js"></script>
+<!-- zona scripts -->
+<script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    const locoScroll = new LocomotiveScroll({
+        el: document.querySelector('[data-scroll-container]'),
+        smooth: true,
+        repeat: true,
+        direction: 'vertical'
+    });
+
+
+    locoScroll.on("scroll", ScrollTrigger.update);
+
+
+    ScrollTrigger.scrollerProxy("[data-scroll-container]", {
+        scrollTop(value) {
+            return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
+        },
+        getBoundingClientRect() {
+            return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
+        },
+        pinType: document.querySelector("[data-scroll-container]").style.transform ? "transform" : "fixed"
+    });
+
+
+
+
+
+    var trojo = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".funciona",
+            scroller: "[data-scroll-container]",
+            scrub: true,
+            start: "top 50%", // top trigger    50% viewport
+            end: "bottom 50%",
+        }
+    });
+
+    trojo.to("body", { backgroundColor: "#ff0000" }, 0);
+
+
+
+    var tverde = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".funciona2",
+            scroller: "[data-scroll-container]",
+            scrub: true,
+            start: "top 50%", // top trigger    50% viewport
+            end: "bottom 50%",
+        }
+    });
+
+    tverde.to("body", { backgroundColor: "#28a92b" }, 0);
+
+
+
+
+
+
+
+
+    ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+    ScrollTrigger.refresh();
+
+
+</script>
+<script>
+    $(document).ready(function () {
+        var mySwiper = new Swiper('.swiper-container', {
+            // esto es opcional
+            direction: 'horizontal',
+            slidesPerView: 1,
+            slidesPerGroup: 1,
+            loop: true,
+            spaceBetween: 0,
+            //visibilityFullFit: true,
+            pagination: '.swiper-pagination',
+            paginationClickable: true,
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev',
+        })
+    });
+</script>
+</body>
+
+</html>

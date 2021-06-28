@@ -22,7 +22,7 @@ function style() {
     console.log('Compilamos estilos...');
 
     return (
-        src('./scss/style.scss')
+        src('./scss/style.scss','./scss/loco.scss')
         .pipe(sass())
         .on('error', sass.logError)
         .pipe(postcss([autoprefixer(), cssnano()]))

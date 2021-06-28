@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- general meta data variables
     DIGITALSTRATEGY - SEO 
@@ -27,8 +28,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/css/swiper.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.jquery.js"></script>
+
     <script src="./assets/js/scripts.js"></script>
 </head>
+
 <body data-barba="wrapper">
     <div class="cursor"></div>
     <div class="cursor-follow"></div>
@@ -38,7 +41,7 @@
     </ul>
     <main data-barba="container" data-barba-namespace="index">
         <div data-scroll-container>
-            <section class=" slide-section my-50"  >
+            <section class=" slide-section my-50" data-bg="#000">
                 <div class="container">
                     <div class="row">
                         <div class="col-xs-12">
@@ -146,7 +149,7 @@
                 </div>
             </section>
             <!-- CLAIM -->
-            <section data-scroll class="mb-big" data-scroll-call="test" >
+            <section data-scroll class="mb-big">
                 <div class="container ">
                     <div id="slide02" class="row">
                         <div class="col-xs-12 ">
@@ -163,16 +166,16 @@
             <div class="container-bleed">
                 <!-- producto -->
                 <section data-scroll>
-                    <div id="slide03" class=" slide-section  height-full align-middle  is-flex"  >
+                    <div id="slide03" class=" slide-section  height-full align-middle  is-flex" data-bg="#dfdcdc">
                         <div class="row">
                             <div class="col-xs-12   col-sm-4 mob:20">
                                 <div class="ml-content">
                                     <div class="kv-block11">
                                         <div class="kv-block11-num">
-                                            <div class="num"> 03 </div>
+                                            <div class="num"> 01 </div>
                                         </div>
                                         <div class="vertical-wrap order-2">
-                                            <div class="vertical-inner fluid-100-b mix-blend"> kivnon </div>
+                                            <div class="vertical-inner fluid-100-b mix-blend"> Qartum </div>
                                         </div>
                                         <div class="kv-block-text order-3"> Lorem ipsum dolor, sit amet consectetur
                                             adipisicing elit. Sit consectetur quos eveniet enim beatae omnis totam
@@ -285,13 +288,13 @@
                 </section>
                 <!-- producto -->
                 <section data-scroll>
-                    <div id="slide04" class=" slide-section height-full align-middle  is-flex" >
+                    <div id="slide04" class=" slide-section height-full align-middle  is-flex" data-bg="#e3e4d4">
                         <div class="row">
                             <div class="col-xs-12   col-sm-4 mob:20">
                                 <div class="ml-content">
                                     <div class="kv-block11">
                                         <div class="kv-block11-num">
-                                            <div class="num"> 04 </div>
+                                            <div class="num"> 01 </div>
                                         </div>
                                         <div class="vertical-wrap order-2">
                                             <div class="vertical-inner fluid-100-b mix-blend"> Qartum </div>
@@ -402,16 +405,16 @@
                 </section>
                 <!-- producto -->
                 <section data-scroll>
-                    <div id="slide05" class=" slide-section height-full align-middle  is-flex" >
+                    <div id="slide05" class=" slide-section height-full align-middle  is-flex" data-bg="#c1d5d3">
                         <div class="row">
                             <div class="col-xs-12   col-sm-4 mob:20">
                                 <div class="ml-content">
                                     <div class="kv-block11">
                                         <div class="kv-block11-num">
-                                            <div class="num"> 05 </div>
+                                            <div class="num"> 01 </div>
                                         </div>
                                         <div class="vertical-wrap order-2">
-                                            <div class="vertical-inner fluid-100-b mix-blend"> La llamada </div>
+                                            <div class="vertical-inner fluid-100-b mix-blend"> Qartum </div>
                                         </div>
                                         <div class="kv-block-text order-3"> Lorem ipsum dolor, sit amet consectetur
                                             adipisicing elit. Sit consectetur quos eveniet enim beatae omnis totam
@@ -519,13 +522,13 @@
                 </section>
                 <!-- producto -->
                 <section data-scroll>
-                    <div id="slide06" class=" slide-section height-full align-middle  is-flex" >
+                    <div id="slide06" class=" slide-section height-full align-middle  is-flex" data-bg="#b3c2c5">
                         <div class="row">
                             <div class="col-xs-12   col-sm-4 mob:20">
                                 <div class="ml-content">
                                     <div class="kv-block11">
                                         <div class="kv-block11-num">
-                                            <div class="num"> 06 </div>
+                                            <div class="num"> 01 </div>
                                         </div>
                                         <div class="vertical-wrap order-2">
                                             <div class="vertical-inner fluid-100-b mix-blend"> Qartum </div>
@@ -778,7 +781,8 @@
     <script src="./assets/js/cursor.js"></script>
     <!-- zona scripts -->
     <script>
-        gsap.registerPlugin(ScrollTrigger);
+
+gsap.registerPlugin(ScrollTrigger);
 
 
         let locoScroll = new LocomotiveScroll({
@@ -787,6 +791,8 @@
             repeat: true,
             direction: 'vertical'
         });
+
+
 
 
 
@@ -826,18 +832,10 @@
                 }, n);
             });
         }
-
         barba.init({
             sync: true,
             transitions: [
                 {
-
-                    async once(data) {
-                        contentAnimation();
-                        smooth();
-                        cursor();
-                    },
-
                     async leave(data) {
                         const done = this.async();
                         pageTransition();
@@ -847,19 +845,20 @@
                     async enter(data) {
                         contentAnimation();
                     },
-                
+                    async once(data) {
+                        contentAnimation();
+                    },
                 },
             ],
         });
 
-            locoScroll.on('call', value => {
-                if (value == "text") {
-                    console.log("Hello World!");
-                }
-            });
+
+
+
 
 
         locoScroll.on("scroll", ScrollTrigger.update);
+
         ScrollTrigger.scrollerProxy("[data-scroll-container]", {
             scrollTop(value) {
                 return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
@@ -869,42 +868,27 @@
             },
             pinType: document.querySelector("[data-scroll-container]").style.transform ? "transform" : "fixed"
         });
-        var tkivnon = gsap.timeline({
+        var trojo = gsap.timeline({
             scrollTrigger: {
-                trigger: "#slide03",
+                trigger: ".funciona",
                 scroller: "[data-scroll-container]",
                 scrub: true,
                 start: "top 50%", // top trigger    50% viewport
                 end: "bottom 50%",
             }
         });
-        tkivnon.to("body", { backgroundColor: "#ff0000" }, 0);
+        trojo.to("body", { backgroundColor: "#ff0000" }, 0);
 
-        
-        var tQartum = gsap.timeline({
+        var tverde = gsap.timeline({
             scrollTrigger: {
-                trigger: "#slide04",
+                trigger: ".funciona2",
                 scroller: "[data-scroll-container]",
                 scrub: true,
                 start: "top 50%", // top trigger    50% viewport
                 end: "bottom 50%",
             }
         });
-        tQartum.to("body", { backgroundColor: "#28a92b" }, 0);
-
-        var tLlamada = gsap.timeline({
-            scrollTrigger: {
-                trigger: "#slide04",
-                scroller: "[data-scroll-container]",
-                scrub: true,
-                start: "top 50%", // top trigger    50% viewport
-                end: "bottom 50%",
-            }
-        });
-        tLlamada.to("body", { backgroundColor: "#ff0000" }, 0);
-
-
-
+        tverde.to("body", { backgroundColor: "#28a92b" }, 0);
 
 
         ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
@@ -912,17 +896,21 @@
 
 
         barba.hooks.after(() => {
-            smooth();
-            cursor();
+
+            let locoScroll = new LocomotiveScroll({
+    el: document.querySelector('[data-scroll-container]'),
+    smooth: true,
+    direction: 'vertical'
 });
 
+       ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+        ScrollTrigger.refresh();
 
-function smooth() {
-	scroll = new LocomotiveScroll({
-		el: document.querySelector('[data-scroll-container]'),
-		smooth: true
-	});
-}
+
+
+
+
+        });
 
 
     </script>
@@ -944,4 +932,5 @@ function smooth() {
         });
     </script>
 </body>
+
 </html>
