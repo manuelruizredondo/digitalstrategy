@@ -422,3 +422,11 @@ header {
 }
 
 
+
+img {
+  max-width: 100%;
+  border-width: 0;
+  vertical-align: middle;
+  -ms-interpolation-mode: bicubic;
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+}
