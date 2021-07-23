@@ -87,63 +87,55 @@ ScrollTrigger.scrollerProxy("[data-scroll-container]", {
 	pinType: document.querySelector("[data-scroll-container]").style.transform ? "transform" : "fixed"
 });
 
-function coloresSections(){
-
-
-
+function coloresSections() {
 	var producto = gsap.timeline({
 		scrollTrigger: {
-			clearProps: true ,
+			clearProps: true,
 			trigger: "#slide01",
 			scroller: "[data-scroll-container]",
 			scrub: true,
 			start: "top 50%", // top trigger    50% viewport
 			end: "bottom 50%",
-		}
+		},
 	});
-	producto.to("body", { backgroundColor: "#000000" }, 0);
+	producto.to(".bodyindex", { backgroundColor: "#000000" }, 0);
 
 
-
-var tkivnon = gsap.timeline({
-	scrollTrigger: {
-		clearProps: true ,
-		trigger: "#slide03",
-		scroller: "[data-scroll-container]",
-		scrub: true,
-		start: "top 50%", // top trigger    50% viewport
-		end: "bottom 50%",
-	}
-});
-tkivnon.to("body", { backgroundColor: "#ff0000" }, 0);
-
+	var tkivnon = gsap.timeline({
+		scrollTrigger: {
+			clearProps: true,
+			trigger: "#slide03",
+			scroller: "[data-scroll-container]",
+			scrub: true,
+			start: "top 50%", // top trigger    50% viewport
+			end: "bottom 50%",
+		},
+	});
+	tkivnon.to(".bodyindex", { backgroundColor: "#ff0000" }, 0);
 
 
-var tQartum = gsap.timeline({
-	scrollTrigger: {
-		
-		trigger: "#slide04",
-		scroller: "[data-scroll-container]",
-		scrub: true,
-		start: "top 50%", // top trigger    50% viewport
-		end: "bottom 50%",
-	}
-});
-tQartum.to("body", { backgroundColor: "#28a92b" }, 0);
+	var tQartum = gsap.timeline({
+		scrollTrigger: {
+			trigger: "#slide04",
+			scroller: "[data-scroll-container]",
+			scrub: true,
+			start: "top 50%", // top trigger    50% viewport
+			end: "bottom 50%",
+		},
+	});
+	tQartum.to(".bodyindex", { backgroundColor: "#28a92b" }, 0);
 
 
-var tLlamada = gsap.timeline({
-	scrollTrigger: {
-		trigger: "#slide05",
-		scroller: "[data-scroll-container]",
-		scrub: true,
-		start: "top 50%", // top trigger    50% viewport
-		end: "bottom 50%",
-	}
-});
-tLlamada.to("body", { backgroundColor: "#eaeaea" }, 0);
-
-	
+	var tLlamada = gsap.timeline({
+		scrollTrigger: {
+			trigger: "#slide05",
+			scroller: "[data-scroll-container]",
+			scrub: true,
+			start: "top 50%", // top trigger    50% viewport
+			end: "bottom 50%",
+		},
+	});
+	tLlamada.to(".bodyindex", { backgroundColor: "#eaeaea" }, 0);
 }
 
 
@@ -154,10 +146,20 @@ function scrollSmooth() {
 	});
 }
 
-
-
-function initColor() {
-	gsap.to("body", { backgroundColor: "#000000",duration: 1 });
+function initSwiper() {
+	var mySwiper = new Swiper('.swiper-container', {
+		// esto es opcional
+		direction: 'horizontal',
+		slidesPerView: 1,
+		slidesPerGroup: 1,
+		loop: true,
+		spaceBetween: 0,
+		//visibilityFullFit: true,
+		pagination: '.swiper-pagination',
+		paginationClickable: true,
+		nextButton: '.swiper-button-next',
+		prevButton: '.swiper-button-prev',
+	})
 }
 
 
@@ -165,14 +167,18 @@ function initColor() {
 
 
 coloresSections();
-initColor()
+initSwiper();
 
 ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
 ScrollTrigger.refresh();
+
 barba.hooks.after(() => {
+
 	scrollSmooth();
 	cursor();
 	coloresSections();
-	initColor();
-	console.log("se ha cargado algo")
+
+	initSwiper() ;
+
+	console.log("fin de la carga de barba")
 });
