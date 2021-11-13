@@ -999,9 +999,7 @@ ul.list-inline {
   width: 50%;
   position: relative;
   div {
-    right: -8%;
-    bottom: 0;
-    position: absolute;
+ 
   }
 
   svg{
@@ -1012,6 +1010,9 @@ ul.list-inline {
     bottom: 16%;
     border-radius: 50%;
     background-color: $primary;
+    right: -8%;
+    bottom: 70px;
+    position: absolute;
   }
 }
 
@@ -1046,6 +1047,7 @@ ul.list-inline {
 .vertical-wrap,
 .vertical-inner {
   display: block;
+  pointer-events: none;
 }
 
 .vertical-inner,

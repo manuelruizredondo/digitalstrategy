@@ -76,7 +76,7 @@ ScrollTrigger.scrollerProxy("[data-scroll-container]", {
 		: "fixed",
 });
 function coloresSections() {
-	var producto = gsap.timeline({
+	gsap.timeline({
 		scrollTrigger: {
 			clearProps: true,
 			trigger: "#slide01",
@@ -86,13 +86,13 @@ function coloresSections() {
 			end: "bottom 50%",
 		},
 	});
-	var tkivnon = gsap.timeline({
+	gsap.timeline({
 		scrollTrigger: {
 			clearProps: true,
 			trigger: "#slide03",
 			scroller: "[data-scroll-container]",
 			scrub: true,
-			start: "top 50%", // top trigger    50% viewport
+			start: "top 20%", // top trigger    50% viewport
 			end: "bottom 50%",
 		},
 	});
@@ -101,12 +101,12 @@ function coloresSections() {
 			trigger: "#slide04",
 			scroller: "[data-scroll-container]",
 			scrub: true,
-			start: "top 50%", // top trigger    50% viewport
+			start: "top 20%", // top trigger    50% viewport
 			end: "bottom 50%",
 		},
 	});
 	tQartum.to(".bodyindex", { backgroundColor: "#28a92b" }, 0);
-	var tLlamada = gsap.timeline({
+	gsap.timeline({
 		scrollTrigger: {
 			trigger: "#slide05",
 			scroller: "[data-scroll-container]",
@@ -128,26 +128,6 @@ function scrollSmooth() {
 
 
 
-/* 	locoScroll.on("call", (value) => {
-		console.log(value);
-		if (value === "negro") {
-			console.log("negro");
-			gsap.to(".bodyindex", { backgroundColor: "#000000" });
-			value = "negro";
-		} else if (value === "azul") {
-			console.log("azul");
-			value = "azul";
-			gsap.to(".bodyindex", { backgroundColor: "#006494" });
-		} else if (value === "rojo") {
-			console.log("rojo");
-			value = "negrrojoo";
-			gsap.to(".bodyindex", { backgroundColor: "#ff6961" });
-		} else if (value === "verde") {
-			value = "verde";
-			console.log("verde");
-			gsap.to(".bodyindex", { backgroundColor: "#009d71" });
-		}
-	}); */
 
 	setTimeout(() => {
 		locoScroll.on('call', (value, way, obj) => {
@@ -197,3 +177,24 @@ barba.hooks.after(() => {
 	initSwiper();
 	console.log("fin de la carga de barba");
 });
+
+
+
+
+
+
+gsap.to(".bg", {height: "0",  duration: 1,   ease: Expo.easeInOut})
+
+
+
+gsap.to(".image-bg",{delay:1, opacity: "1",duration: 1,  ease: Expo.easeInOut})
+
+gsap.to(".outtext-1 .intext",{ delay:.2, top: "0", duration: 1, ease: Expo.easeInOut})
+gsap.to(".outtext-2 .intext",{delay:.4, top: "0",duration: 1,  ease: Expo.easeInOut})
+gsap.to(".outtext-3 .intext",{delay:.5, top: "0",duration: 1,  ease: Expo.easeInOut})
+gsap.to(".outtext-4 .intext",{delay:.6, top: "0",duration: 1,  ease: Expo.easeInOut})
+
+
+gsap.to(".image-digital",{delay:.7, opacity: "1",duration: 1,  ease: Expo.easeInOut})
+
+

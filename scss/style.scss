@@ -23,21 +23,16 @@ a {
 /*+------------------------------------------------------------+
 |       -FASE 2 : IMPORTA TU HOLYGRAIL
 +------------------------------------------------------------+*/
-
 @import "../node_modules/holygrailcss/scss/partials.scss";
 @import "./_post-holygrail.scss";
 @import "./_kv-menu.scss";
 @import "./swiper.scss";
 @import "./video.scss";
 //@import "./loco.scss";
-
-
 .digital-container{
   height: 100vh;
   margin: 0;
 }
-
-
 .xtitulo {
   @include font-regular();
   color: #fff;
@@ -148,8 +143,6 @@ a.link1 {
 .sup-70 {
   margin-top: -75px;
 }
-
-
 .discount {
   position: absolute;
   top: 16px;
@@ -159,7 +152,6 @@ a.link1 {
   color: #fff;
   padding: 8px;
 }
-
 .discount:after {
   content: "";
   position: absolute;
@@ -170,9 +162,6 @@ a.link1 {
   border-top: 12px solid #000;
   border-left: 11px solid transparent;
 }
-
-
-
 .cover{
   position: absolute;
   width: 0%;
@@ -182,38 +171,27 @@ a.link1 {
   background-color: #FF3366;
   z-index: 1;
 }
-
 #caja-fija{
-
   border: 1px solid orange;
 }
-
 .section  {
   height: 90vh;
 }
-
 .has-scroll-smooth body {
   overflow: hidden;
 }
 html.has-scroll-smooth {
   overflow: hidden;
 }
-
 .section2{
   height: 90vh;
-
 }
-
 .section3{
   height: 90vh;
-
 }
-
 .section4{
   height: 90vh;
-
 }
-
 .panel {
   height: 100vh;
   border: 1px solid yellow;
@@ -227,23 +205,18 @@ html.has-scroll-smooth {
   display: inline-block;
   background-color: rgba(255,255,255,1);
 }
-
 .section2{
   border: 1px solid yellow;
 }
-
 .orange{
-
   width: 50%;
 }
-
 .imagen{
   float: right;
   border: 2px solid red;
   width: 400px;
   height: 3000px;
 }
-
 .section{
   min-height: 90vh;
   display: flex;
@@ -252,28 +225,19 @@ html.has-scroll-smooth {
   align-content: center;
   justify-content: center;
   align-items: center;
-
-
 }
-
 .active{
   background-color: yellow;
-
-
 }
-
 .active2{
   background-color: orange;
 }
-
 body{
   transition: background-color .3s ease;
 }
-
 .funciona,.funciona2{
   border: 2px solid black;
 }
-
 .imagespin{
   width: 300px;
   height: 500px;
@@ -281,7 +245,6 @@ body{
   position: absolute;
   right: 0;
 }
-
 .panel {
   height: 100vh;
   background-color: orange;
@@ -295,15 +258,12 @@ body{
   display: inline-block;
   background-color: rgba(255,255,255,1);
 }
-
 .section-2 {
   display: flex;
   blockquote {
 width: 400px;
       font-size: 38px;
       padding: 16px 16px 0 16px;
-
-
   }
   .pined{
     border: 2px solid blue;
@@ -320,8 +280,6 @@ width: 400px;
     }
   }
 }
-
-
 h4:before {
   width: auto;
 }
@@ -349,31 +307,26 @@ h4:before {
   -ms-transform: scaleX(1);
   transform: scaleX(1);
 }
-
 hmtl,
 body {
 	margin: 0;
 	padding: 0;
 }
-
 body {
 	font-family: "Fira Sans", sans-serif;
 	font-size: 16px;
 	height: 100vh;
 	background: #000000;
 }
-
 ul {
 	list-style: none;
 	margin: 0;
 	padding: 0;
 }
-
 a {
 	text-decoration: none;
 	color: #ccc;
 }
-
 h1 {
 	font-size: 44px;
 	line-height: 52px;
@@ -381,9 +334,6 @@ h1 {
     margin: 0 0 70px;
     color: #ffffff;
 }
-
-
-
 .transition {
 	position: absolute;
 	z-index: 99;
@@ -395,35 +345,27 @@ h1 {
 	margin: 0;
 	padding: 0;
 	pointer-events: none;
-
 	li {
 		width: 100%;
 		transform: scaleX(0);
 		background: #fffffe;
 	}
 }
-
 //HeaderUI
 header {
     padding: 20px;
-
     nav {
         max-width: 992px;
         margin: 0 auto;
     }
-
 	ul {
 		display: flex;
 		align-items: center;
-
 		li {
 			margin-right: 20px;
         }
 	}
 }
-
-
-
 // img {
 //   max-width: 100%;
 //   border-width: 0;
@@ -431,42 +373,95 @@ header {
 //   -ms-interpolation-mode: bicubic;
 //   clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
 // }
-
 .swiper-wrapper{
-
-
   -ms-interpolation-mode: bicubic;
-
-
   &:hover{
-
-
-
   }
 }
-
 body{
   cursor: none;
 }
-
-
-
 .img-wrap{
   width: 100%;
   height: 100%;
+  background-position: top right;
+  background-size: initial;
   .img-inner{  
-    width: 100%;
+    position: absolute;
+    right: 0;
+    width: 0%;
     height: 100%;
     clip-path: inset(0 0 0 0);
-    transition:all .4s cubic-bezier(.77,0,.18,1);
+    transition:clip-path .4s cubic-bezier(.77,0,.18,1), width 1s cubic-bezier(.77,0,.18,1);
+    background-position: top right;
+    background-size: initial;
   }
   &:hover{
     .img-inner{  
       clip-path: inset(5% 5% 5% 5%);  
     }
   }
+
+ 
+}
+
+.is-inview{
+  .img-inner{
+    width:100%;
+  }
+
 }
 
 .vertical-wrap{
+}
+[class*="outtext-"] {
+  overflow: hidden;
+  position: relative;
+  .intext{
+    position: absolute;
+    left: 0;
+  }
+}
+.outtext-1,.outtext-2{
+  height: 170px;
+  .intext{
+    top: 170px;
+  }
+}
 
+.outtext-2{
+  top:-20px;
+}
+
+.outtext-3,.outtext-4{
+  height: 50px;
+  .intext{
+    top: 50px;
+  }
+}
+.bg {
+  position: absolute;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #f70154;
+
+  z-index: 1;
+}
+
+.image-digital{
+  position: absolute;
+  right: 5%;
+  top: 100px;
+  opacity: 0;
+  width: 35%;
+}
+
+.image-bg{
+
+  opacity: 0;
+}
+
+h1{
+  position: relative;
 }
