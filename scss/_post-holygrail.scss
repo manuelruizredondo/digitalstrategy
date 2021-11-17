@@ -1030,10 +1030,16 @@ ul.list-inline {
   }
 }
 .point {
-  width: 50%;
+  width: 100%;
   position: relative;
-  div {
+  top:100px;
+  @media (min-width: $break-md) {
+    top: 0;
+    width: 50%;
   }
+  
+
+
   svg{
     max-width: 1200px;
   }
@@ -1042,7 +1048,7 @@ ul.list-inline {
     bottom: 16%;
     border-radius: 50%;
     background-color: $primary;
-    right: -8%;
+    left: 65%;
     bottom: 70px;
     position: absolute;
   }

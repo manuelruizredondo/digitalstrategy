@@ -433,10 +433,16 @@ body{
 }
 
 .outtext-3,.outtext-4{
-  height: 50px;
+  height: 25px;
   .intext{
     top: 50px;
   }
+  @media (min-width: $break-lg) {
+    height: 50px;
+
+  }
+
+
 }
 .bg {
   position: absolute;
@@ -451,9 +457,16 @@ body{
 .image-digital{
   position: absolute;
   right: 5%;
-  top: 100px;
+  top: 20px;
   opacity: 0;
-  width: 35%;
+  width: 65%;
+
+  @media (min-width: $break-lg) {
+    right: 5%;
+    top: 100px;
+    opacity: 0;
+    width: 35%;
+  }
 }
 
 .image-bg{
