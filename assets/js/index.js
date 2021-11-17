@@ -123,6 +123,12 @@ function scrollSmooth() {
 		smooth: true,
 		repeat: true,
 		direction: "vertical",
+		smartphone: {
+			smooth: true
+		},
+		tablet: {
+			smooth: true
+		}
 	});
 
 
