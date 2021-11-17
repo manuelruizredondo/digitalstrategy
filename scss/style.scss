@@ -394,7 +394,8 @@ body{
     clip-path: inset(0 0 0 0);
     transition:clip-path .4s cubic-bezier(.77,0,.18,1), width 1s cubic-bezier(.77,0,.18,1);
     background-position: top right;
-    background-size: initial;
+    background-size: cover;
+
   }
   &:hover{
     .img-inner{  
@@ -405,15 +406,8 @@ body{
  
 }
 
-.is-inview{
-  .img-inner{
-    width:100%;
-  }
 
-}
 
-.vertical-wrap{
-}
 [class*="outtext-"] {
   overflow: hidden;
   position: relative;
