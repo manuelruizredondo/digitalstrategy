@@ -1137,7 +1137,13 @@ ul.list-inline {
   width: 140vw;
 }
 .height-full-2{
-  min-height: 120vh;
+  min-height: 80vh;
+
+  @media (min-width: $break-lg) {
+    min-height: 120vh;
+  }
+
+  
 }
 .vertical-wrap {
   width: 50vw;

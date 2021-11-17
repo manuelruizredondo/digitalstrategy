@@ -417,7 +417,12 @@ body{
   }
 }
 .outtext-1,.outtext-2{
-  height: 170px;
+  height: 20vw;
+  max-height: 170px;
+  @media (min-width: $break-lg) {
+    height: 170px;
+  }
+
   .intext{
     top: 170px;
   }
