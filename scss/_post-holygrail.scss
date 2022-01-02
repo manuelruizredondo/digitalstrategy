@@ -1152,8 +1152,14 @@ ul.list-inline {
   
 }
 .vertical-wrap {
-  width: 100vw;
+  width: 100%;
+
 }
+.full-view {
+  width: 100vw;
+
+}
+
 .vertical-wrap,
 .vertical-wrap-2 {
   overflow: hidden;
