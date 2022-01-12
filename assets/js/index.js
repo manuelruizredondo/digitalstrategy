@@ -1,3 +1,6 @@
+
+$ciclo = true;
+
 function pageTransition() {
 	var tl = gsap.timeline();
 	tl.to(".transition li", {
@@ -42,6 +45,9 @@ barba.init({
 				console.log("once");
 				scrollSmooth();
 				cursor();
+				initSwiper();
+				initPage();
+				loadPage();
 			},
 			async leave(data) {
 				const done = this.async();
@@ -51,6 +57,7 @@ barba.init({
 			},
 			async enter(data) {
 				//	contentAnimation();
+				initPage();
 				cursor();
 				console.log("enter");
 			},
@@ -159,6 +166,41 @@ function scrollSmooth() {
 	ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
 	ScrollTrigger.refresh();
 }
+
+function initPage() {
+	if($ciclo==true){
+		gsap.to(".bg", {height: "0",  duration: 1,   ease: Expo.easeInOut})
+
+		$ciclo = false;
+
+	}else{
+		gsap.to(".bg", {height: "0",  duration: .1,   ease: Expo.easeInOut})
+		console.log("carga de pagina 23");
+	}
+
+
+	gsap.to(".image-bg",{delay:1, opacity: "1",duration: 1,  ease: Expo.easeInOut})
+
+	gsap.to(".outtext-1 .intext",{ delay:.2, top: "0", duration: 1, ease: Expo.easeInOut})
+	gsap.to(".outtext-2 .intext",{delay:.4, top: "0",duration: 1,  ease: Expo.easeInOut})
+	gsap.to(".outtext-3 .intext",{delay:.5, top: "0",duration: 1,  ease: Expo.easeInOut})
+	gsap.to(".outtext-4 .intext",{delay:.6, top: "0",duration: 1,  ease: Expo.easeInOut})
+
+	gsap.to(".image-digital",{delay:.7, opacity: "1",duration: 1,  ease: Expo.easeInOut})
+
+	console.log("carga de pagina");
+
+
+}
+function loadPage() {
+	$ciclo = false;
+
+
+}
+
+
+
+
 function initSwiper() {
 	var mySwiper = new Swiper(".swiper-container", {
 		// esto es opcional
@@ -175,32 +217,20 @@ function initSwiper() {
 	});
 }
 //coloresSections();
-initSwiper();
+
+
 barba.hooks.after(() => {
 	scrollSmooth();
 	cursor();
-	//coloresSections();
+	initPage();
+	loadPage();
 	initSwiper();
+
 	console.log("fin de la carga de barba");
 });
 
 
 
 
-
-
-gsap.to(".bg", {height: "0",  duration: 1,   ease: Expo.easeInOut})
-
-
-
-gsap.to(".image-bg",{delay:1, opacity: "1",duration: 1,  ease: Expo.easeInOut})
-
-gsap.to(".outtext-1 .intext",{ delay:.2, top: "0", duration: 1, ease: Expo.easeInOut})
-gsap.to(".outtext-2 .intext",{delay:.4, top: "0",duration: 1,  ease: Expo.easeInOut})
-gsap.to(".outtext-3 .intext",{delay:.5, top: "0",duration: 1,  ease: Expo.easeInOut})
-gsap.to(".outtext-4 .intext",{delay:.6, top: "0",duration: 1,  ease: Expo.easeInOut})
-
-
-gsap.to(".image-digital",{delay:.7, opacity: "1",duration: 1,  ease: Expo.easeInOut})
 
 

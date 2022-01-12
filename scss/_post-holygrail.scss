@@ -1014,8 +1014,7 @@ ul.list-inline {
 .btn:focus {
   outline: none;
 }
-.kv-block11-num {
-}
+
 .kv-block11-title {
   position: relative;
   z-index: 10;
@@ -1025,7 +1024,7 @@ ul.list-inline {
   padding: 20px 0;
   width: 100%;
   @media (min-width: $break-sm) {
-    position: absolute;
+
     bottom: 0;
   }
 }
@@ -1069,7 +1068,7 @@ ul.list-inline {
   position: relative;
   display: inline-block;
   text-align: right;
-  height: 32px;
+  height: 16px;
   width: 100px;
   .num {
     position: absolute;
@@ -1084,7 +1083,7 @@ ul.list-inline {
     left: 0;
     width: 0;
     height: 2px;
-    background-color: $primary;
+    background-color: white;
   }
 }
 .rat-3-2 {
@@ -1146,7 +1145,7 @@ ul.list-inline {
   min-height: 80vh;
 
   @media (min-width: $break-lg) {
-    min-height: 120vh;
+    min-height: 90vh;
   }
 
   
