@@ -95,6 +95,17 @@ h6 {
   }
 }
 
+@keyframes verticalImage {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 
 body {
   overflow-x: hidden;
@@ -1192,9 +1203,11 @@ ul.list-inline {
 
   .img-wrap  .img-inner{
       width:100%;
-      left: 0;
-      background-position: left;
-      transition-delay: .2s;
+
+      animation: 1.5s verticalImage 1 cubic-bezier(0.19, 1, 0.22, 1);
+      animation-fill-mode: both;
+
+      
     }
   
  

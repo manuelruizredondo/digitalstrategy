@@ -392,19 +392,16 @@ body{
   .img-inner{  
     position: absolute;
     right: 0;
-    width: 0%;
+    width: 100%;
+    transform: translateY(100%);
+    opacity: 0;
     height: 100%;
-    clip-path: inset(0 0 0 0);
-    transition:clip-path 1s cubic-bezier(.77,0,.18,1), width .6s cubic-bezier(.77,0,.18,1);
+  
     background-position: top left;
     background-size: cover;
 
   }
-  &:hover{
-    .img-inner{  
-      clip-path: inset(5% 5% 5% 5%);  
-    }
-  }
+
 
  
 }
