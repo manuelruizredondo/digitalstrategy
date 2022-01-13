@@ -72,12 +72,9 @@ h6 {
     transform: translateX(0);
     opacity: 0;
   }
-  10% {
-    transform: translateX(0);
-    opacity: 0;
-  }
+
   50% {
-    transform: translateX(0);
+    transform: translateX(100px);
     opacity: 1;
   }
   100% {
@@ -89,16 +86,16 @@ h6 {
   0% {
     width: 0;
   }
-  10% {
-    width: 0;
-  }
+
   50% {
-    width: 0;
+    width: 100px;
   }
   100% {
     width: 100px;
   }
 }
+
+
 body {
   overflow-x: hidden;
   background: #000;
@@ -1034,7 +1031,7 @@ ul.list-inline {
   top:100px;
   @media (min-width: $break-md) {
     top: 0;
-    width: 50%;
+    width: 100%;
   }
   
 
@@ -1046,9 +1043,9 @@ ul.list-inline {
     width: 6%;
     bottom: 16%;
     border-radius: 50%;
-    background-color: $primary;
-    left: 65%;
-    bottom: 70px;
+    background-color: #f70154;
+    left: 100%;
+    bottom: 0;
     position: absolute;
   }
 }
@@ -1173,7 +1170,7 @@ ul.list-inline {
 .opened{
   .kv-block11-num {
     .num {
-      animation: 3s numFade 1 cubic-bezier(0.19, 1, 0.22, 1);
+      animation: 3s numFade  1 cubic-bezier(0.19, 1, 0.22, 1);
       animation-fill-mode: both;
     }
     &:after {
@@ -1195,6 +1192,9 @@ ul.list-inline {
 
   .img-wrap  .img-inner{
       width:100%;
+      left: 0;
+      background-position: left;
+      transition-delay: .2s;
     }
   
  
