@@ -267,9 +267,7 @@ width: 400px;
       font-size: 38px;
       padding: 16px 16px 0 16px;
   }
-  .pined{
-    border: 2px solid blue;
-  }
+
   .pinned-quote{
     border: 2px solid red;
   }
@@ -449,7 +447,7 @@ body{
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: #f70154;
+  background: $primary;
 
   z-index: 1;
 }
@@ -491,3 +489,7 @@ h1{
     }
   }
 }
+
+
+
+

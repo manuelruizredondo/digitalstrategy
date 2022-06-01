@@ -1,10 +1,8 @@
-
 $ciclo = true;
-
 function pageTransition() {
 	var tl = gsap.timeline();
 	tl.to(".transition li", {
-		duration: 0.3,
+		duration: 0.4,
 		scaleX: 1,
 		transformOrigin: "bottom right",
 	});
@@ -14,35 +12,13 @@ function pageTransition() {
 		transformOrigin: "bottom left",
 	});
 }
-// function contentAnimation() {
-// 	var tl = gsap.timeline();
-// 	tl.from(".headline", {
-// 		duration: 1.5,
-// 		translateX: 50,
-// 		opacity: 0,
-// 	});
-// 	tl.to(
-// 		"img",
-// 		{
-// 			clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
-// 		},
-// 		"-=.1"
-// 	);
-// }
-function delay(n) {
-	n = n || 2000;
-	return new Promise((done) => {
-		setTimeout(() => {
-			done();
-		}, n);
-	});
-}
+
 barba.init({
 	sync: true,
 	transitions: [
 		{
 			async once(data) {
-				console.log("once");
+				console.log("once barba");
 				scrollSmooth();
 				cursor();
 				initSwiper();
@@ -52,14 +28,17 @@ barba.init({
 			async leave(data) {
 				const done = this.async();
 				pageTransition();
-				await delay(300);
+				await delay(400);
 				done();
+				
+				console.log("leave barba");
 			},
 			async enter(data) {
 				//	contentAnimation();
 				initPage();
+				scrollSmooth();
 				cursor();
-				console.log("enter");
+				console.log("enter barba");
 			},
 		},
 	],
@@ -125,112 +104,124 @@ function coloresSections() {
 }
 function scrollSmooth() {
 	gsap.registerPlugin(ScrollTrigger);
+
 	let locoScroll = new LocomotiveScroll({
 		el: document.querySelector("[data-scroll-container]"),
 		smooth: true,
 		repeat: true,
 		direction: "vertical",
 		smartphone: {
-			smooth: true
+			smooth: true,
 		},
 		tablet: {
-			smooth: true
-		}
+			smooth: true,
+		},
 	});
-
-
-
-
-
 	setTimeout(() => {
-		locoScroll.on('call', (value, way, obj) => {
-	
-		  if (way === 'enter') {
-			switch (value) {
-			  case "pageColor":
-				// get color code from data-scroll-id  assigned to body by obj.id
-				gsap.to(".bodyindex", { backgroundColor: obj.id });
-
-				break;      
-		   }
-		  }
-	
+		locoScroll.on("call", (value, way, obj) => {
+			if (way === "enter") {
+				switch (value) {
+					case "pageColor":
+						// get color code from data-scroll-id  assigned to body by obj.id
+						gsap.to(".bodyindex", { backgroundColor: obj.id });
+						break;
+				}
+			}
 		});
-	  }, 800);
-
-
-
-
-
+	}, 800);
+	
 	locoScroll.on("scroll", ScrollTrigger.update);
 	ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
 	ScrollTrigger.refresh();
 }
-
 function initPage() {
-	if($ciclo==true){
-		gsap.to(".bg", {height: "0",  duration: 1,   ease: Expo.easeInOut})
 
+
+	if ($ciclo == true) {
+		gsap.to(".bg", { height: "0", duration: 1, ease: Expo.easeInOut });
 		$ciclo = false;
-
-	}else{
-		gsap.to(".bg", {height: "0",  duration: .1,   ease: Expo.easeInOut})
+	} else {
+		gsap.to(".bg", { height: "0", duration: 0.1, ease: Expo.easeInOut });
 		console.log("carga de pagina 23");
 	}
 
-
-	gsap.to(".image-bg",{delay:1, opacity: "1",duration: 1,  ease: Expo.easeInOut})
-
-	gsap.to(".outtext-1 .intext",{ delay:.2, top: "0", duration: 1, ease: Expo.easeInOut})
-	gsap.to(".outtext-2 .intext",{delay:.4, top: "0",duration: 1,  ease: Expo.easeInOut})
-	gsap.to(".outtext-3 .intext",{delay:.5, top: "0",duration: 1,  ease: Expo.easeInOut})
-	gsap.to(".outtext-4 .intext",{delay:.6, top: "0",duration: 1,  ease: Expo.easeInOut})
-
-	gsap.to(".image-digital",{delay:.7, opacity: "1",duration: 1,  ease: Expo.easeInOut})
-
+	gsap.to(".outtext-1 .intext", { delay: 0.2, top: "0", duration: 1, ease: Expo.easeInOut, });
+	gsap.to(".outtext-2 .intext", { delay: 0.4, top: "0", duration: 1, ease: Expo.easeInOut, });
+	gsap.to(".outtext-3 .intext", { delay: 0.5, top: "0", duration: 1, ease: Expo.easeInOut, });
+	gsap.to(".outtext-4 .intext", { delay: 0.6, top: "0", duration: 1, ease: Expo.easeInOut, });
+	gsap.to(".image-digital", { delay: 0.7, opacity: "1", duration: 1, ease: Expo.easeInOut, });
 	console.log("carga de pagina");
-
-
 }
 function loadPage() {
 	$ciclo = false;
-
-
 }
-
-
-
-
 function initSwiper() {
+	var menu = [
+		"2000",
+		"2001",
+		"2002",
+		"2003",
+		"2004",
+		"2005",
+		"2006",
+		"2007",
+		"2008",
+		"2009",
+	];
 	var mySwiper = new Swiper(".swiper-container", {
-		// esto es opcional
+		// If we need pagination
 		direction: "horizontal",
-		slidesPerView: 1,
+		slidesPerView: 5,
 		slidesPerGroup: 1,
 		loop: true,
 		spaceBetween: 0,
-		//visibilityFullFit: true,
-		pagination: ".swiper-pagination",
 		paginationClickable: true,
-		nextButton: ".swiper-button-next",
-		prevButton: ".swiper-button-prev",
+		pagination: {
+			el: ".swiper-pagination",
+			clickable: true,
+			renderBullet: function (index, className) {
+				return '<span class="' + className + '">' + menu[index] + "</span>";
+			},
+		},
+		breakpoints: {
+			0: {
+				slidesPerView: 1.5,
+			
+			},
+			640: {
+				slidesPerView: 1.5,
+			
+			},
+			768: {
+				slidesPerView: 4,
+		
+			},
+			1280: {
+				slidesPerView: 5,
+			},
+		},
+		// Navigation arrows
+		navigation: {
+			nextEl: ".swiper-button-next",
+			prevEl: ".swiper-button-prev",
+		},
+	});
+}
+
+function delay(n) {
+	n = n || 2000;
+	return new Promise((done) => {
+		setTimeout(() => {
+			done();
+		}, n);
 	});
 }
 //coloresSections();
-
-
 barba.hooks.after(() => {
 	scrollSmooth();
 	cursor();
 	initPage();
 	loadPage();
 	initSwiper();
-
 	console.log("fin de la carga de barba");
 });
-
-
-
-
-
-

@@ -1,60 +1,54 @@
-
-$primary:  #F70154;
-
-
-.swiper-button-prev,
-.swiper-button-next {
-  background-image: none !important;
+$primary:  $primary;
+@keyframes scroll {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(15px);
+    opacity: 0;
+  }
 }
 .swiper-container {
   width: 100%;
   height: 100%;
+  padding-bottom: 50px;
   @media (min-width: 992px) {
     height: 100%;
   }
   .swiper-button-prev,
   .swiper-button-next {
-    top: auto;
     width: 44px;
     height: 44px;
     background-color:$primary;
-    svg {
-      position: absolute;
-      top: 4px;
-      left: 6px;
-    }
+    margin-top: 0px;
+    background-image: none;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
     @media (min-width: 992px) {
-      top: auto;
-      width: 77px;
-      height: 77px;
-      background-color:$primary;
-      svg {
-        position: absolute;
-        top: 23px;
-        left: 20px;
-      }
+      width: 50px;
+      height: 50px;
     }
-
     &:hover{
       opacity: .6;
     }
   }
-  .swiper-button-prev {
-    bottom: 60px;
-    left: 16px;
-    @media (min-width: 992px) {
-      bottom: 77px;
-      left: 0px;
-    }
-  }
-  .swiper-button-next {
-    bottom: 16px;
-    left: 16px;
-    @media (min-width: 992px) {
-      bottom: 0px;
-      left: 0px;
-    }
-  }
+}
+.swiper-button-prev{
+  left: 0;
+  right: auto;
+}
+.swiper-button-next{
+  left: auto;
+  right: 0;
+  top: 50%;
+  transform: translateY(calc(-50% - 25px));
+  z-index: 10;
 }
 .swiper-slide {
   background-size: cover;
@@ -92,72 +86,88 @@ $primary:  #F70154;
   animation-timing-function: cubic-bezier(0.15, 0.41, 0.69, 0.94);
   animation-iteration-count: infinite;
 }
-@keyframes scroll {
-  0% {
-    opacity: 0;
-  }
-  10% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(15px);
-    opacity: 0;
-  }
-}
-.swiper-pagination {
-  display: none;
-}
-.swiper-mini {
-  overflow: hidden;
-
-
-  &.swiper-container{
-    height: auto;
-    padding-bottom: 70px;
-  }
-  .swiper-slide {
-    width: 350px;
-    min-height: 550px;
-  }
-  .swiper-button-prev,
-  .swiper-button-next {
-    top: auto;
-    width: 54px;
-    height: 54px;
-
-    background-color: $primary;
-
-
-    &:hover {
-      background-color: $primary;
-      opacity: .6;
-    }
-    svg {
-      position: absolute;
-      top: 11px;
-      left: 10px;
-    }
-  }
-  .swiper-button-disabled{
-    background-color: rgba(0, 0, 0, 0.1);
-    pointer-events: none;
-  }
-
-
-  .swiper-button-prev {
-    bottom: 0;
-    left: 0;
-  }
-  .swiper-button-next {
-    bottom: 0px;
-    left: 60px;
-  }
-}
 .swiper-title {
   position: absolute;
   z-index: 10;
   top: 35%;
-  .link1 {
+}
+.swiper-button-next{
+  svg{
+    transform: rotate(180deg);
   }
+}
+.swiper-pagination {
+  bottom: 0!important;
+  display: flex;
+}
+.swiper-pagination-bullet {
+	padding: 0 ;
+	border-radius: 0;
+	width: 10%;
+  height: 50px;
+	text-align: left;
+	line-height: 30px;
+  font-size: 12px;
+	color:#fff;
+	opacity: 1;
+	background: transparent;
+  display: inline-block;
+  margin: 0!important;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  align-content: space-between;
+  transform: scale(1);
+  transition: .2s ease all;
+}
+.swiper-pagination-bullet-active {
+	color:$primary;
+  @include font-bold;
+  transform: scale(2);
+}
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
+  width: 100%;
+  font-size: 18px;
+}
+.swiper-pagination-bullet-active{
+}
+.swiper-slide{
+  border-right: 1px solid white;
+  height: 500px;
+  padding: 0 16px;
+  transition: .4s cubic-bezier(0.215, 0.61, 0.355, 1) all;
+  opacity: .5;
+  @media (max-width: 991px) {
+  opacity: 1;
+  }
+  @media (min-width: 992px) {
+    width: 100%;
+  }
+}
+.slide-year{
+  transition: .4s cubic-bezier(0.215, 0.61, 0.355, 1) all;
+}
+.swiper-slide-active{
+  opacity: 1;
+  transition: .4s cubic-bezier(0.215, 0.61, 0.355, 1) all;
+  @media (max-width: 991px) {
+  width: 25vw!important;
+  }
+  @media (min-width: 992px) {
+    width: 500px!important;
+  }
+  .slide-year{
+    color: $primary;
+  }
+}
+.grad {
+  width: 100px;
+  height: 500px;
+  top: 0;
+  z-index: 1;
+  position: absolute;
+  right: 0;
+  background: rgb(0,0,0);
+  background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
 }

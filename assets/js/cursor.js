@@ -2,11 +2,18 @@ function cursor() {
 	var $cursor = document.querySelector(".cursor");
 	var $follower = document.querySelector(".cursor-follow");
 	var $hoverables = document.querySelectorAll(".hoverable");
+	var $drags = document.querySelectorAll(".drag");
 
 	for (let i = 0; i < $hoverables.length; i++) {
 		$hoverables[i].addEventListener("mouseenter", onMouseHover);
 		$hoverables[i].addEventListener("mouseleave", onMouseHoverOut);
 		$hoverables[i].addEventListener("click", onMouseHoverOut);
+	}
+
+	for (let i = 0; i < $drags.length; i++) {
+		$drags[i].addEventListener("mouseenter", onDragOn);
+		$drags[i].addEventListener("mouseleave", onDragOff);
+
 	}
 	var posX = 0,
 		posY = 0;
@@ -63,6 +70,15 @@ function cursor() {
 				scale: 1,
 			},
 		});
+	}
+
+
+	function onDragOn() {
+		document.body.classList.add('drag')
+	}
+
+	function onDragOff() {
+		document.body.classList.remove('drag')
 	}
 
 
